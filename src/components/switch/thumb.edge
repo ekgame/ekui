@@ -1,0 +1,7 @@
+@let(_checked = $context.checked || false)
+
+<span
+  {{ $props.toAttrs() }}
+  data-state="{{ _checked ? 'checked' : 'unchecked' }}"
+  data-component="ekui-switch-thumb"
+></span>

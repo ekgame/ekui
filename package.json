@@ -1,0 +1,20 @@
+{
+  "name": "ekui-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node sandbox"
+  },
+  "dependencies": {
+    "compression": "^1.8.0",
+    "edge.js": "^6.3.0",
+    "express": "^5.1.0",
+    "prettier": "^3.6.2",
+    "sirv": "^3.0.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "vite": "^7.0.0"
+  }
+}
