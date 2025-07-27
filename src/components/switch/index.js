@@ -1,9 +1,8 @@
 
-import { AbstractComponent } from "../../AbstractComponent";
-import { listenForActivation, dispatchCustomEvent } from "../../utils";
+import { AbstractComponent } from "#root/AbstractComponent";
+import { dispatchCustomEvent, on } from "#root/events";
 
 export class SwitchComponent extends AbstractComponent {
-
   static get componentTag() {
     return 'ekui-switch';
   }
@@ -11,9 +10,9 @@ export class SwitchComponent extends AbstractComponent {
   /**
    * Initializes the switch component by setting up event listeners.
    */
-  init() {
-    listenForActivation(this.getRootElement(), () => {
-      this.toggle();
+  static init() {
+    on(`[data-component="${this.componentTag}"]`, 'click', (target) => {
+      this.from(target).toggle();
     });
   }
 
@@ -58,7 +57,7 @@ export class SwitchComponent extends AbstractComponent {
       thumb.dataset.state = 'checked';
     }
 
-    dispatchCustomEvent(this.getRootElement(), 'change', {
+    dispatchCustomEvent(root, 'change', {
       checked: true,
     });
   }
@@ -77,33 +76,9 @@ export class SwitchComponent extends AbstractComponent {
       thumb.dataset.state = 'unchecked';
     }
 
-    dispatchCustomEvent(this.getRootElement(), 'change', {
+    dispatchCustomEvent(root, 'change', {
       checked: false,
     });
-  }
-
-  /**
-   * Gets the root element of the switch component.
-   * @returns {HTMLElement} - The root element of the switch component.
-   **/
-  getRootElement() {
-    return this.rootElement;
-  }
-
-  /**
-   * Gets the thumb element of the switch component.
-   * @returns {HTMLElement|null} - The thumb element of the switch component.
-   **/
-  getThumbElement() {
-    return this.rootElement.querySelector('[data-component="ekui-switch-thumb"]');
-  }
-
-  /**
-   * Gets the input element of the switch component.
-   * @returns {HTMLInputElement|null} - The input element of the switch component.
-   **/
-  getInputElement() {
-    return this.rootElement.querySelector('input[type="hidden"]');
   }
 
   /**
@@ -116,9 +91,9 @@ export class SwitchComponent extends AbstractComponent {
    **/
   getElements() {
     return {
-      root: this.getRootElement(),
-      thumb: this.getThumbElement(),
-      input: this.getInputElement(),
+      root: this.rootElement,
+      thumb: this.rootElement.querySelector('[data-component="ekui-switch-thumb"]'),
+      input: this.rootElement.querySelector('input[type="hidden"]'),
     };
   }
 }
