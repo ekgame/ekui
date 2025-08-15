@@ -1,0 +1,34 @@
+<!--
+  -- Required: [data-component="cc-switch-root"]
+  -- The "aria-checked" attribute should be "true"/"false" based on the switch's state.
+  -- The "data-state" attribute should be "checked"/"unchecked" based on the switch's state.
+  -->
+<button
+  type="button"
+  role="switch"
+  data-component="cc-switch-root"
+  aria-checked="false"
+  data-state="unchecked"
+>
+  <!--
+    -- Optional: [data-component="cc-switch-input"]
+    -- The "disabled" attribute should be removed when the switch is checked.
+    -->
+  <input
+    type="hidden"
+    name="switch-example"
+    value="on"
+    disabled
+    data-component="cc-switch-input"
+  >
+
+  <!--
+    -- Optional: [data-component="cc-switch-thumb"]
+    -- This element visually represents the switch's thumb.
+    -- The "data-state" attribute should be the same as the button's "data-state" attribute.
+    -->
+  <span
+    data-component="cc-switch-thumb"
+    data-state="unchecked"
+  ></span>
+</button>

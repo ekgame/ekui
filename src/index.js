@@ -1,12 +1,11 @@
-import { SwitchComponent } from "./components/switch";
+import { SwitchRootComponent, SwitchInputComponent, SwitchThumbComponent } from "./components/switch";
 
 document.addEventListener('DOMContentLoaded', () => {
-  SwitchComponent.init();
+  SwitchRootComponent.init();
 });
 
-const components = {
-  SwitchComponent,
+export default {
+  SwitchRootComponent,
+  SwitchInputComponent,
+  SwitchThumbComponent,
 };
-
-window.ekui = components;
-export default components;

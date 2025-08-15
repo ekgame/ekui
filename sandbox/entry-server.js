@@ -1,9 +1,9 @@
 import { Edge } from 'edge.js'
-import { ekuiPluginComponent } from '../src/edge-provider';
+import { customControlsPlugin } from '../src/edge-provider';
 
 const edge = Edge.create();
 edge.mount(new URL('./', import.meta.url));
-edge.use(ekuiPluginComponent);
+edge.use(customControlsPlugin);
 
 /**
  * @param {string} _url

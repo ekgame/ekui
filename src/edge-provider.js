@@ -1,9 +1,9 @@
 import { Edge } from "edge.js";
 
 /**
- * @description Ekui plugin for Edge.js
- * @param {Edge} edge 
+ * @description Custom controls plugin for Edge.js
+ * @param {Edge} edge The Edge.js instance to extend with custom components.
  */
-export const ekuiPluginComponent = (edge) => {
-  edge.mount('ekui', new URL('./', import.meta.url));
+export const customControlsPlugin = (edge) => {
+  edge.mount('cc', new URL('../templates/edge/', import.meta.url));
 }

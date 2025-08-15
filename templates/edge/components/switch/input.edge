@@ -1,0 +1,11 @@
+@let(_checked = $context.checked || false)
+
+<input
+  type="hidden"
+  value="{{ value || 'on' }}"
+  {{ $props.except(['value', 'type', 'disabled']).toAttrs() }}
+  @if(!_checked)
+    disabled
+  @end
+  data-component="cc-switch-input"
+>

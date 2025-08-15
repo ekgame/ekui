@@ -10,10 +10,12 @@
     "compression": "^1.8.0",
     "edge.js": "^6.3.0",
     "express": "^5.1.0",
+    "jquery": "^3.7.1",
     "prettier": "^3.6.2",
     "sirv": "^3.0.1"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.32",
     "cross-env": "^7.0.3",
     "vite": "^7.0.0"
   },

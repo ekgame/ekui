@@ -7,8 +7,13 @@
  */
 export function on(selector, eventName, callback) {
   document.addEventListener(eventName, function (event) {
-    const target = event.target.closest(selector);
-    if (!target) {
+    const originalTarget = event.target;
+    if (!originalTarget || !(originalTarget instanceof HTMLElement)) {
+      return;
+    }
+
+    const target = originalTarget.closest(selector);
+    if (!target || !(target instanceof HTMLElement)) {
       return;
     }
 

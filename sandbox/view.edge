@@ -1,4 +1,17 @@
-<label for="switch-foo">Test</label>
-@ekui.switch.root({ id: "switch-foo", class: "switch", name: "foo", checked: true })
-  @!ekui.switch.thumb({ class: "switch-thumb"})
-@end
+<div>
+  <label for="switch-foo">Test</label>
+  @cc.switch.root({ id: "switch-foo", class: "switch", checked: true })
+    @!cc.switch.input({ name: "switch-foo" })
+    @!cc.switch.thumb({ class: "switch-thumb"})
+    Hello world!
+  @end
+</div>
+
+<div>
+  <label for="switch-foo-2">Test</label>
+  @cc.switch.root({ id: "switch-foo-2", class: "switch", checked: true })
+    @!cc.switch.input({ name: "switch-foo-2" })
+    @!cc.switch.thumb({ class: "switch-thumb"})
+  @end
+</div>
+

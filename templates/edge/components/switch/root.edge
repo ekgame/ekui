@@ -1,0 +1,15 @@
+@let(_checked = checked || false)
+
+{{-- Provide checked state to the thumb and input components --}}
+@inject({ checked: _checked })
+
+<button
+  type="button"
+  role="switch"
+  {{ $props.except(['checked']).toAttrs() }}
+  data-component="cc-switch-root"
+  aria-checked="{{ _checked }}"
+  data-state="{{ _checked ? 'checked' : 'unchecked' }}"
+>
+  {{{ await $slots.main() }}}
+</button>
